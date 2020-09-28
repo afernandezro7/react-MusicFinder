@@ -5,7 +5,7 @@ const Info = ({infoartista}) => {
 
     if(Object.keys(infoartista).length === 0 || infoartista.artists === null) return null
     
-    const{strArtistThumb, strArtist, strGenre, strBiographyES, strFacebook, strTwitter, strLastFMChart}=infoartista.artists[0]
+    const{strArtistThumb, strArtist, strGenre, strBiographyES,strBiographyEN, strFacebook, strTwitter, strLastFMChart}=infoartista.artists[0]
     
     
     return (
@@ -21,7 +21,7 @@ const Info = ({infoartista}) => {
                     />
                     <p className="card-text">Género: {strGenre}</p>
                     <p className="card-text">Biografía:</p>
-                    <p className="card-text">{strBiographyES}</p>
+                    <p className="card-text">{strBiographyES === null ? (strBiographyEN) : (strBiographyES)}</p>
                     <p className="card-text">
                         <a href={`https://${strFacebook}`} target="_blank" rel="noopener noreferrer">
                             <i className="fab fa-facebook"></i>
